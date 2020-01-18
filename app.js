@@ -23,7 +23,7 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
              else
              {
                  dom.style.display = 'block';
-                 dom.src = 'dice-'+dice+'.png'; 
+                 dom.src = 'images/dice-'+dice+'.png'; 
                  roundScore += dice;
                  document.getElementById('current-'+activePlayer).textContent = roundScore;
              }
