@@ -14,7 +14,7 @@ var scores, roundScore, activePlayer;
 
 scores = [0,0];
 roundScore = 0;
-activePlayer = 1;
+activePlayer = 0;
 
 //document.querySelector('#current-'+activePlayer).textContent = dice;
 //document.querySelector('#current-'+activePlayer).innerHTML = '<em>'+dice+'</em>'ry
@@ -32,8 +32,30 @@ document.querySelector('.dice').style.display = 'none';
 document.querySelector('.btn-roll').addEventListener('click',function(){
     
     var dice = Math.floor(6*Math.random()+1);
-    
     var dom = document.querySelector('.dice');
-    dom.style.display = 'block';
-    dom.src = 'dice-'+dice+'.png'; 
+    
+    if(dice===1)
+        {
+            roundScore=0;
+            document.getElementById('current-'+activePlayer).textContent = '0';
+            activePlayer = activePlayer===0 ? activePlayer=1 : activePlayer=0;
+            dom.style.display = 'none';
+        }
+    else
+        {
+             dom.style.display = 'block';
+             dom.src = 'dice-'+dice+'.png'; 
+             roundScore += dice;
+             document.getElementById('current-'+activePlayer).textContent = ''+roundScore;
+        }
+});
+
+document.querySelector('.btn-hold').addEventListener('click',function(){
+    
+    scores[activePlayer] += roundScore;
+    roundScore = 0;
+    document.getElementById('current-'+activePlayer).textContent='0';
+    document.getElementById('score-'+activePlayer).textContent = ''+scores[activePlayer];
+    activePlayer = activePlayer===0 ? activePlayer=1 : activePlayer=0;
+    document.querySelector('.dice').style.display = 'none';
 });
