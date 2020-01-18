@@ -29,6 +29,7 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
     
     var dice = Math.floor(6*Math.random()+1);
     
-    document.querySelector('.dice').style.display = 'block';
-    document.querySelector('.dice').src = 'dice-'+dice+'.png'; 
+    var dom = document.querySelector('.dice');
+    dom.style.display = 'block';
+    dom.src = 'dice-'+dice+'.png'; 
 });
