@@ -12,4 +12,5 @@ A simple Pig Game using Javascript, HTML and CSS.
 
 
 ![](images/p1.PNG)
+![](images/p3.PNG)
 ![](images/p2.PNG)
