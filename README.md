@@ -1,6 +1,6 @@
-# Pig-Game
+# Pig-Dice-Game
 
-A simple Pig Game using Javascript, HTML and CSS.
+A simple Pig Dice Game using Javascript, HTML and CSS.
 
 <h2>GAME RULES:</h2>
 
