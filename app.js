@@ -46,6 +46,8 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
              dom.style.display = 'block';
              dom.src = 'dice-'+dice+'.png'; 
              roundScore += dice;
+             if(scores[activePlayer]+roundScore >=100)
+                 alert('Player-'+activePlayer+' has won the game..');
              document.getElementById('current-'+activePlayer).textContent = ''+roundScore;
         }
 });
