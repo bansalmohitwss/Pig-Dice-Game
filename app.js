@@ -38,17 +38,18 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
         {
             roundScore=0;
             document.getElementById('current-'+activePlayer).textContent = '0';
-            activePlayer = activePlayer===0 ? activePlayer=1 : activePlayer=0;
+            activePlayer = activePlayer===0 ? 1 : 0;
             dom.style.display = 'none';
+            
+            document.querySelector('.player-0-panel').classList.toggle('active');
+            document.querySelector('.player-1-panel').classList.toggle('active');
         }
-    else
+         else
         {
-             dom.style.display = 'block';
+            dom.style.display = 'block';
              dom.src = 'dice-'+dice+'.png'; 
              roundScore += dice;
-             if(scores[activePlayer]+roundScore >=100)
-                 alert('Player-'+activePlayer+' has won the game..');
-             document.getElementById('current-'+activePlayer).textContent = ''+roundScore;
+             document.getElementById('current-'+activePlayer).textContent = roundScore;
         }
 });
 
